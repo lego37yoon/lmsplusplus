@@ -1,4 +1,4 @@
-# LMS Chrome Extension (for Firefox)
+# LMS Plus Plus Extension (for Firefox)
 
 <p align="center">
   <img src="https://i.imgur.com/wj3LY1j.png" alt="thumbnail">
@@ -14,6 +14,9 @@
 * 원작자와 합의되지 않았으므로 Firefox Add-Ons에는 업로드하지 않습니다.
 * 추후 원작자에게 원본 소스를 전달할 수 있습니다.
 * Chrome용으로 재포팅하지 않습니다.
+* 소스코드 충돌을 방지하기 위해 firefox-main 브랜치에서 작업합니다.
+* 아래 내용은 원본 README의 내용이며, 사용법은 원본과 동일합니다.
+* 향후 버전 배포시, self-signed xpi 파일이 제공되므로 Releases에서 xpi 파일을 눌러 설치하시면 됩니다. 
 
 안녕하세요.
 
