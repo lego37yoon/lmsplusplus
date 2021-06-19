@@ -34,7 +34,7 @@ window.customElements.define(
             /**
              * save activation state
              */
-            (oldValue, newValue) => chrome.storage.sync.set({
+            (oldValue, newValue) => browser.storage.sync.set({
               'activated': newValue,
             }),
           ],
@@ -46,7 +46,7 @@ window.customElements.define(
            * - check on available page
            * - update isVideoPage, disabled, and url state
            */
-          init: () => new Promise((res) => chrome.tabs.query({
+          init: () => new Promise((res) => tabs.query({
               active: true,
               lastFocusedWindow: true,
             }, ([{ url: curUrl }]) => {
@@ -70,7 +70,7 @@ window.customElements.define(
            * set activated state from storage
            */
           setActivatedStateFromStorage: async () =>
-            chrome.storage.sync.get(['activated'], ({ activated }) =>
+            browser.storage.sync.get(['activated'], ({ activated }) =>
               this.$data.activated = activated ?? false),
           /**
            * get video urls
@@ -127,13 +127,13 @@ window.customElements.define(
             if (!this.$data.disabled) {
               this.$data.activated = !this.$data.activated;
 
-              chrome.storage.sync.set({
+              browser.storage.sync.set({
                 session: this.$data.activated,
                 playback: this.$data.activated,
               });
 
-              chrome.tabs.getSelected(null, ({ id }) =>
-                chrome.tabs.executeScript(id, {
+              tabs.getSelected(null, ({ id }) =>
+                tabs.executeScript(id, {
                   code: 'window.location.reload();',
                 }));
             }

@@ -1,7 +1,7 @@
 (() => {
   window.addEventListener('load', () => {
-    // get chrome settings
-    chrome.storage.sync.get(['session', 'playback', 'course'], ({
+    // get firefox settings
+    browser.storage.sync.get(['session', 'playback', 'course'], ({
       session,
       playback,
       course,

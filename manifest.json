@@ -38,5 +38,12 @@
       "js": ["contentScript.js"],
       "run_at": "document_end"
     }
-  ]
+  ],
+
+  "browser_specific_settings": {
+    "gecko": {
+        "id": "lmsplusplus@paperbox.lms",
+        "strict_min_version": "57.0a1"
+    }
+  }
 }
