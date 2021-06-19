@@ -132,7 +132,7 @@ window.customElements.define(
                 playback: this.$data.activated,
               });
 
-              browser.tabs.getSelected(null, ({ id }) =>
+              browser.tabs.query({active: true}, ({ id }) =>
                 browser.tabs.executeScript(id, {
                   code: 'window.location.reload();',
                 }));
