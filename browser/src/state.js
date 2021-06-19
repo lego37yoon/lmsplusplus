@@ -46,7 +46,7 @@ window.customElements.define(
            * - check on available page
            * - update isVideoPage, disabled, and url state
            */
-          init: () => new Promise((res) => tabs.query({
+          init: () => new Promise((res) => browser.tabs.query({
               active: true,
               lastFocusedWindow: true,
             }, ([{ url: curUrl }]) => {
@@ -132,8 +132,8 @@ window.customElements.define(
                 playback: this.$data.activated,
               });
 
-              tabs.getSelected(null, ({ id }) =>
-                tabs.executeScript(id, {
+              browser.tabs.getSelected(null, ({ id }) =>
+                browser.tabs.executeScript(id, {
                   code: 'window.location.reload();',
                 }));
             }
